@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+    <tabletop>
+        <length>1600</length>
+        <width>700</width>
+        <height>100</height>
+    </tabletop>
+    <drawer>
+
+        <motherboard>
+            <type>
+                <atx>
+                    <length>305</length>
+                    <width>244</width>
+                    <height>30</height>
+                </atx>
+                
+                <micro_atx>
+                    <length>244</length>
+                    <width>244</width>
+                    <height>30</height>
+                </micro_atx>
+
+                <mini_atx>
+                    <length>210</length>
+                    <width>170</width>
+                    <height>30</height>
+                </mini_atx>
+
+                <extendet_atx>
+                    <length>305</length>
+                    <width>330</width>
+                    <height>30</height>
+                </extendet_atx>
+
+                <mini_itx>
+                    <length>170</length>
+                    <width>170</width>
+                    <height>30</height>
+                </mini_itx>
+
+                <micro_itx>
+                    <length>244</length>
+                    <width>244</width>
+                    <height>30</height>
+                </micro_itx>           
+
+                <xl_atx>
+                    <length>345</length>
+                    <width>262</width>
+                    <height>30</height>
+                </xl_atx>     
+
+                <flexatx>
+                    <length>228</length>
+                    <width>190</width>
+                    <height>30</height>
+                </flexatx>
+
+            </type>
+            <mount>
+<!--Из расчета, что чипсет направлен на нас, а интерфейс вводов и выводов направлен влево
+   _______→X
+  |
+  |
+  v 
+  Y
+   ________________________________
+  |   |   ___________________      |   
+  | i |  |       CPU Socket  |     |  
+  | o |  |                   |     |
+  |___|  |___________________|     |
+  |                                |
+  |                                |
+  |    ___________________         |
+  |   | RAM Slots         |        |
+  |   |                   |        |
+  |   |___________________|        |
+  |                                |
+  |                                |
+  |    ___________________         |
+  |   | PCI-E Slots       |        |
+  |   |                   |        |
+  |   |                   |        |
+  |   |___________________|        |
+  |                                |
+  |    ___________________         |
+  |   | SATA Connectors   |        |
+  |   |                   |        |
+  |   |___________________|        |
+  |                                |
+  |    ___________________         |
+  |   | Power Connector   |        |
+  |   |___________________|        |
+  |________________________________|
+  
+  -->
+                <diameter>3.96</diameter>
+                <height>10</height>
+                <atx>
+                    <A>
+                        <y>288.29</y>
+                        <x>9.8</x>                        
+                    </A>
+                    <G>
+                        <y>305</y>
+                        <x>159.25</x>                        
+                    </G>
+                    <K>
+                        <y>305</y>
+                        <x>229.075</x>                        
+                    </K>
+                    <X>
+                        <y>305</y>
+                        <x>244</x>                        
+                    </X>
+                    <R>
+                        <y>305</y>
+                        <x>159.25</x>                        
+                    </R>
+                    <B>
+                        <y>305</y>
+                        <x>9.8</x>                        
+                    </B>
+                    <S>
+                        <y>305</y>
+                        <x>159.25</x>                        
+                    </S>
+                    <H_>
+                        <y>305</y>
+                        <x>244</x>                        
+                    </H_>
+                    <Y_>
+                        <y>305</y>
+                        <x>229.075</x>                        
+                    </Y_>
+                    <C>
+                        <y>158.025</y>
+                        <x>9.8</x>                        
+                    </C>
+                    <H>
+                        <y>158.025</y>
+                        <x>159.25</x>                        
+                    </H>
+                    <L>
+                        <y>158.025</y>
+                        <x>229.075</x>                        
+                    </L>
+                    <Y>
+                        <y>158.025</y>
+                        <x>229.075</x>                        
+                    </Y>
+                    <F>
+                        <y>3.125</y>
+                        <x>31.83</x>                        
+                    </F>
+                    <J>
+                        <y>3.125</y>
+                        <x>159.25</x>                        
+                    </J>
+                    <J_>
+                        <y>305</y>
+                        <x>244</x>                        
+                    </J_>
+                    <M>
+                        <y>3.125</y>
+                        <x>229.075</x>                        
+                    </M>
+                    <Z>
+                        <y>3.125</y>
+                        <x>244</x>                        
+                    </Z>                            
+                </atx>    
+            </mount>
+        </motherboard>
+
+    </drawer>
+    <leg>
+        <min_height>600</min_height>
+        <max_height>900</max_height>
+        <step>10</step>
+        <radius>50</radius>
+    </leg>
+   
+</table>
