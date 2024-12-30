@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <table>
     <tabletop>
-        <length>1600</length>
-        <width>700</width>
+        <length>700</length>
+        <width>1600</width>
         <height>100</height>
     </tabletop>
     <drawer>
 
         <motherboard>
             <type>
+                <none>
+                    <length>0</length>
+                    <width>0</width>
+                    <height>0</height>
+                </none>
                 <atx>
                     <length>305</length>
                     <width>244</width>
