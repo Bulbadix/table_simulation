@@ -7,8 +7,12 @@ from table import Table
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from cuboid import Cuboid
+from motherboard import Motherboard
 import xml.etree.ElementTree as ET
+from tkinterweb import HtmlFrame  # Используем HtmlFrame вместо Web
+import plotly.graph_objects as go
+import numpy as np
+import os
 
 # Инициализация объекта стола
 table = Table('table_data.xml')
@@ -25,7 +29,7 @@ def selected(event):
     selected_motherboard_type = combobox.get()
     print(selected_motherboard_type)
     label["text"] = f"вы выбрали: {selected_motherboard_type}"
-    update_cuboid(selected_motherboard_type)
+    update_motherboard(selected_motherboard_type)
     
 # Список для материнских плат
 motherboards = []
@@ -40,12 +44,12 @@ if type_element is not None:
         motherboards.append(motherboard_name)
         
 # Инициализация объекта кубоида
-cuboid = Cuboid('table_data.xml', selected_motherboard_type, center_x=table.table_width / 2, center_y=table.table_length / 2, center_z=table.current_height + (table.board_height / 2) - 50 / 2)
+motherboard = Motherboard('table_data.xml', selected_motherboard_type, center_x=table.table_width / 2, center_y=table.table_length / 2, center_z=table.current_height + (table.board_height / 2) - 50 / 2)
 
-def update_cuboid(motherboard_type):
-    global cuboid
+def update_motherboard(motherboard_type):
+    global motherboard
     # Обновляем кубоид с новыми размерами на основе выбранного типа
-    cuboid = Cuboid('table_data.xml', motherboard_type, center_x=table.table_width / 2, center_y=table.table_length / 2, center_z=table.current_height + (table.board_height / 2) - 50 / 2)
+    motherboard = Motherboard('table_data.xml', motherboard_type, center_x=table.table_width / 2, center_y=table.table_length / 2, center_z=table.current_height + (table.board_height / 2) - 50 / 2)
     update_visualization()  # Обновляем визуализацию с новыми размерами кубоида
 
 # Обновление визуализации
@@ -55,10 +59,11 @@ def update_visualization():
 
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection='3d')
-    
+
+
     table.draw(ax)
     # Визуализируем кубоид
-    cuboid.draw(ax)
+    motherboard.draw(ax)
 
     # Настройка осей
     ax.set_xlabel('X')
@@ -88,14 +93,14 @@ def update_visualization():
 def move_up():
     if table.current_height < table.max_height:
         table.current_height += table.step
-        cuboid.center_z += table.step
+        motherboard.center_z += table.step
         height_label.config(text=f"Высота стола: {table.current_height} мм")
         update_visualization()
 
 def move_down():
     if table.current_height > table.min_height:
         table.current_height -= table.step
-        cuboid.center_z -= table.step
+        motherboard.center_z -= table.step
         height_label.config(text=f"Высота стола: {table.current_height} мм")
         update_visualization()
 
@@ -127,6 +132,9 @@ up_button = ttk.Button(right_panel, text="Вверх", command=move_up)
 up_button.pack(pady=10)
 down_button = ttk.Button(right_panel, text="Вниз", command=move_down)
 down_button.pack(pady=10)
+
+
+
 
 
 
